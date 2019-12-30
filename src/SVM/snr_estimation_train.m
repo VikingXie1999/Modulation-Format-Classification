@@ -19,17 +19,17 @@ for snr=0:n
     y1(snr+1) = mean(a);
 end
 SNRModel_2PSK = polyfit(x1,log10(y1),2);
-f=SNRModel_2PSK(1)*x1.^2+SNRModel_2PSK(2)*x1+SNRModel_2PSK(3);
+f1=SNRModel_2PSK(1)*x1.^2+SNRModel_2PSK(2)*x1+SNRModel_2PSK(3);
 save SNRModel_2PSK SNRModel_2PSK 
 % plot
 subplot(2,3,1)
-plot(x1,log10(y1),'x')
+plot(x1,log10(y1),'s','MarkerFaceColor',[0 0.4470 0.7410] )
 hold on;
 title('2PSK')
 hold on;
-plot(x1,f)
+plot(x1,f1,'Color',[0 0.4470 0.7410])
 xlabel('SNR/dB')
-ylabel('log10(sumD)')
+ylabel('log(Var^2)' )
 %% QPSK
 for snr=0:n
     for jj=1:p
@@ -44,16 +44,16 @@ for snr=0:n
     y1(snr+1) = mean(a);
 end
 SNRModel_QPSK = polyfit(x1,log10(y1),2);
-f=SNRModel_QPSK(1)*x1.^2+SNRModel_QPSK(2)*x1+SNRModel_QPSK(3);
+f2=SNRModel_QPSK(1)*x1.^2+SNRModel_QPSK(2)*x1+SNRModel_QPSK(3);
 save SNRModel_QPSK SNRModel_QPSK
 % plot
 subplot(2,3,2)
-plot(x1,log10(y1),'x')
+plot(x1,log10(y1),'s','MarkerFaceColor',[0 0.4470 0.7410] )
 hold on;
-plot(x1,f)
+plot(x1,f2,'Color',[0 0.4470 0.7410])
 title('QPSK')
 xlabel('SNR/dB')
-ylabel('log10(sumD)')
+ylabel('log(Var^2)' )
 %% 8PSK
 for snr=0:n
     for jj=1:p
@@ -70,14 +70,14 @@ end
 SNRModel_8PSK = polyfit(x1,log10(y1),2);
 save SNRModel_8PSK SNRModel_8PSK
 % plot
-f=SNRModel_8PSK(1)*x1.^2+SNRModel_8PSK(2)*x1+SNRModel_8PSK(3);
+f3=SNRModel_8PSK(1)*x1.^2+SNRModel_8PSK(2)*x1+SNRModel_8PSK(3);
 subplot(2,3,3)
-plot(x1,log10(y1),'x')
+plot(x1,log10(y1),'s','MarkerFaceColor',[0 0.4470 0.7410] )
 hold on;
-plot(x1,f)
+plot(x1,f3,'Color',[0 0.4470 0.7410])
 title('8PSK')
 xlabel('SNR/dB')
-ylabel('log10(sumD)')
+ylabel('log(Var^2)' )
 %% 8QAM
 for snr=0:n
     for jj=1:p
@@ -94,14 +94,14 @@ end
 SNRModel_8QAM = polyfit(x1,log10(y1),2);
 save SNRModel_8QAM SNRModel_8QAM
 % plot
-f=SNRModel_8QAM(1)*x1.^2+SNRModel_8QAM(2)*x1+SNRModel_8QAM(3);
+f4=SNRModel_8QAM(1)*x1.^2+SNRModel_8QAM(2)*x1+SNRModel_8QAM(3);
 subplot(2,3,4)
-plot(x1,log10(y1),'x')
+plot(x1,log10(y1),'s','MarkerFaceColor',[0 0.4470 0.7410] )
 hold on;
-plot(x1,f)
+plot(x1,f4,'Color',[0 0.4470 0.7410])
 title('8QAM')
 xlabel('SNR/dB')
-ylabel('log10(sumD)')
+ylabel('log(Var^2)' )
 %% 16QAM
 for snr=0:n
     for jj=1:p
@@ -118,14 +118,14 @@ end
 SNRModel_16QAM = polyfit(x1,log10(y1),2);
 save SNRModel_16QAM SNRModel_16QAM
 % plot
-f=SNRModel_16QAM(1)*x1.^2+SNRModel_16QAM(2)*x1+SNRModel_16QAM(3);
+f5=SNRModel_16QAM(1)*x1.^2+SNRModel_16QAM(2)*x1+SNRModel_16QAM(3);
 subplot(2,3,5)
-plot(x1,log10(y1),'x')
+plot(x1,log10(y1),'s','MarkerFaceColor',[0 0.4470 0.7410] )
 hold on;
-plot(x1,f)
+plot(x1,f5,'Color',[0 0.4470 0.7410])
 title('16QAM')
 xlabel('SNR/dB')
-ylabel('log10(sumD)')
+ylabel('log(Var^2)')
 %% 32QAM
 for snr=0:n
     for jj=1:p
@@ -142,11 +142,12 @@ end
 SNRModel_32QAM = polyfit(x1,log10(y1),2);
 save SNRModel_32QAM SNRModel_32QAM
 % plot
-f=SNRModel_32QAM(1)*x1.^2+SNRModel_32QAM(2)*x1+SNRModel_32QAM(3);
+f6=SNRModel_32QAM(1)*x1.^2+SNRModel_32QAM(2)*x1+SNRModel_32QAM(3);
 subplot(2,3,6)
-plot(x1,log10(y1),'x')
+plot(x1,log10(y1),'s','MarkerFaceColor',[0 0.4470 0.7410] )
 hold on;
-plot(x1,f)
+plot(x1,f6,'Color',[0 0.4470 0.7410])
 title('32QAM')
 xlabel('SNR/dB')
-ylabel('log_{10}(sumD)')
+ylabel('log(Var^2)')
+
